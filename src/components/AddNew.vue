@@ -6,33 +6,33 @@
 </template>
 
 <script>
-import EventBus from '../eventBus'
+import EventBus from '../eventBus';
 
 export default {
   name: 'AddNew',
-  data(){
-    return{
+  data() {
+    return {
       title: '',
-    }
+    };
   },
-  methods:{
-    handleInput(){
+  methods: {
+    handleInput() {
       // console.log(this.AddNewValue);
     },
     send() {
-      if(this.title !== ""){
+      if (this.title !== '') {
         const payload = {
           id: Math.random().toString(36).substr(2, 9),
           title: this.title,
-          done: false
-        }
+          done: false,
+        };
         EventBus.$emit('DATA_PUBLISHED', payload);
-        this.title = "";
+        this.title = '';
       }
-    }
+    },
   },
 
-}
+};
 </script>
 
 <style lang="scss" scoped>

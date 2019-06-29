@@ -13,29 +13,30 @@
 </template>
 
 <script>
-import EventBus from "../eventBus";
+import EventBus from '../eventBus';
 
 export default {
-  name: "List",
+  name: 'List',
   data() {
     return {
       tasks: [
         {
           id: 1,
-          title: "Make dinner",
-          done: false
+          title: 'Make dinner',
+          done: false,
         },
         {
           id: 2,
-          title: "Clean room",
-          done: true
+          title: 'Clean room',
+          done: true,
         },
         {
           id: 3,
-          title: "Go to the gym",
-          done: false
-        }
-      ]
+          title: 'Go to the gym',
+          done: false,
+        },
+      ],
+      localStorageEnabled: true,
     };
   },
   methods: {
@@ -47,19 +48,19 @@ export default {
       }
     },
     remove(task) {
-      let todoIndex = this.tasks.indexOf(task);
+      const todoIndex = this.tasks.indexOf(task);
       this.tasks.splice(todoIndex, 1);
     },
 
     updateData(payload) {
       this.tasks.push(payload);
-    }
+    },
   },
   mounted() {
-    EventBus.$on("DATA_PUBLISHED", payload => {
+    EventBus.$on('DATA_PUBLISHED', (payload) => {
       this.updateData(payload);
     });
-  }
+  },
 };
 </script>
 

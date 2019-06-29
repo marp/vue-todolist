@@ -5,8 +5,8 @@ import router from './router';
 Vue.config.productionTip = false;
 
 new Vue({
-  created () {
-    document.title = "ToDo List";
+  created() {
+    document.title = 'ToDo List';
   },
   router,
   render: h => h(App),

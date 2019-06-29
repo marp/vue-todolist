@@ -14,19 +14,19 @@ import AddNew from '@/components/AddNew.vue';
 
 export default {
   name: 'home',
-  data(){
-    return{
+  data() {
+    return {
       newTaskParam: '',
-    }
+    };
   },
   components: {
     List, AddNew,
   },
-  methods:{
-    newTask(e){
+  methods: {
+    newTask(e) {
       this.newTaskParam = e;
-    }
-  }
+    },
+  },
 };
 </script>
 

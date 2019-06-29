@@ -1,10 +1,14 @@
 # vue_todolist
-This is my own application which helps organising things to do. It's very simple app but i made it for exercise vue.js.
+This is my own application which helps organising things to do. It's very simple app, I made it for exercise VueJS.
 
  Functionalities I have used:
 - sending and receiving data to and from components
-- v-model, v-bind, v-if, v-else, v-style, v-on,
+- changing variable values and deleting items in array
+- vue routing
+- v-model, v-bind, v-if, v-else, v-style, v-on etc.
 - custom CSS
+
+![preview](./preview.png)
 
 ## Project setup
 ```
@@ -20,21 +24,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

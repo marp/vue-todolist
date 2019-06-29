@@ -8,7 +8,7 @@ This is my own application which helps organising things to do. It's very simple
 - v-model, v-bind, v-if, v-else, v-style, v-on etc.
 - custom CSS
 
-![preview](preview.png)
+![preview](preview.png?raw=true)
 
 ## Project setup
 ```

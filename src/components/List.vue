@@ -1,12 +1,12 @@
 <template>
   <div class="divList">
-    <h3>ToDo List</h3>
+    <h3>ToDo List ( {{tasks.length}} )</h3>
     <ul v-for="task in tasks" :key="task.id">
-      <li>
-        <s v-if="task.done">{{task.title}}</s>
-        <span v-else>{{task.title}}</span>
-        <button @click="done(task)">Done</button>
-        <button @click="remove(task)">Remove</button>
+      <li v-bind:class="{doneClass: task.done}">
+        <s @click="done(task)" v-if="task.done">{{task.title}}</s>
+        <span @click="done(task)" v-else>{{task.title}}</span>
+
+        <button @click="remove(task)" class="x custom_padding">X</button>
       </li>
     </ul>
   </div>
@@ -53,18 +53,16 @@ export default {
         task.done = false;
       }
     },
-    add(){
-      this.tasks.push(title);
+    remove(task){
+      function    arrayRemove(arr, value) {
+          return arr.filter(function(ele){
+              return ele != value;
+          });
+        }
+      arrayRemove(this.tasks, task);
+      this.tasks.splice(task, 1);
     },
-    remove(id){
-      arrayRemove(this.tasks, id);
-      this.tasks.splice(id, 1);
-    },
-    arrayRemove(arr, value) {
-      return arr.filter(function(ele){
-          return ele.id != value;
-      });
-    },
+
     updateData (payload) {
       this.tasks.push(payload);
     }
@@ -82,6 +80,69 @@ export default {
 .divList{
   margin-left: auto;
   margin-right: auto;
-  border: 3px double black;
+  border: 3px solid black;
+  padding: 10px;
+  background-color: lightgoldenrodyellow;
 }
+
+li{
+  font-size: 20px;
+  font-weight: 700;
+  margin: 10px;
+  color: black;
+  cursor: pointer;
+}
+
+li:hover{
+  text-decoration: underline;
+  color:darkred;
+}
+
+.doneClass{
+  color: green;
+  font-weight: 500;
+}
+
+ .x {
+    backface-visibility: hidden;
+  position: relative;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  background: #e52;
+  border-radius: 100px;
+  border: 0px solid #444;
+  border-width: 0px 0px 0px 0px;
+  padding: 0px 5px 0px 5px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 900;
+  font-style: normal
+  }
+  .x > div {
+    color: #999;
+  font-size: 10px;
+  font-weight: initial;
+  font-style: normal;
+  text-align: center;
+  margin: 0px 0px 0px 0px
+  }
+  .x > i {
+    color: #fff;
+  font-size: 1em;
+  border-radius: 0px;
+  border: 0px solid transparent;
+  border-width: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+  position: static
+  }
+  .x > .ld {
+    font-size: initial
+  }
+  .custom_padding{
+    margin-left: 10px;
+  }
 </style>

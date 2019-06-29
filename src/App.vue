@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <Navbar/>
-    <hr>
     <router-view/>
   </div>
 </template>
@@ -19,5 +18,16 @@ export default {
 
 
 <style lang="scss">
+  a{
+    font-size: 22px;
+    color: purple;
+    text-decoration: none;
+  }
+
+  a:hover{
+    text-decoration: underline;
+    color: red;
+  }
+
 
 </style>

@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <h1>Home</h1>
+    <p>Click on task to make it done. Cross on left make removes task.</p>
     <List newTaskParam="asdf"/>
-    <hr>
     <AddNew v-on:send="newTask"/>
   </div>
 </template>
@@ -29,3 +29,13 @@ export default {
   }
 };
 </script>
+
+
+<style lang="scss">
+@import url('https://fonts.googleapis.com/css?family=Mali:500,700&display=swap');
+
+*{
+    font-family: 'Mali', cursive;
+}
+
+</style>

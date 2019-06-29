@@ -2,7 +2,7 @@
   <div id="nav">
     <div class="navLogo">ToDo List in Vue.JS</div>
     <div>
-      <router-link to="/">Home</router-link>|
+      <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
     <div style="clear: both;"></div>
@@ -19,5 +19,8 @@
     background: -webkit-linear-gradient(top, #000, #a0c); // We will need to generate gradient colors to complement the background.
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+  #nav{
+    border-bottom: 3px solid black;
   }
 </style>

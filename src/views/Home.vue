@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <h1>Home</h1>
-    <p>Click on task to make it done. Cross on left make removes task.</p>
-    <List newTaskParam="asdf"/>
+    <p>Click on task to make it done or undone. Cross on right make removes task.</p>
+    <List/>
     <AddNew v-on:send="newTask"/>
   </div>
 </template>

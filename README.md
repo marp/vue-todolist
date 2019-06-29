@@ -1,4 +1,10 @@
 # vue_todolist
+This is my own application which helps organising things to do. It's very simple app but i made it for exercise vue.js.
+
+ Functionalities I have used:
+- sending and receiving data to and from components
+- v-model, v-bind, v-if, v-else, v-style, v-on,
+- custom CSS
 
 ## Project setup
 ```

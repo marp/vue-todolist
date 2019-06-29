@@ -1,9 +1,9 @@
 <template>
   <div class="home">
     <h1>Home</h1>
-    <List msg="Welcome to Your Vue.js App"/>
+    <List newTaskParam="asdf"/>
     <hr>
-    <AddNew/>
+    <AddNew v-on:send="newTask"/>
   </div>
 </template>
 
@@ -14,8 +14,18 @@ import AddNew from '@/components/AddNew.vue';
 
 export default {
   name: 'home',
+  data(){
+    return{
+      newTaskParam: '',
+    }
+  },
   components: {
     List, AddNew,
   },
+  methods:{
+    newTask(e){
+      this.newTaskParam = e;
+    }
+  }
 };
 </script>

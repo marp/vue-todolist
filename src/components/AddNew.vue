@@ -1,32 +1,34 @@
 <template>
   <div class="divAddNew">
-    <input placeholder="ToDo Title" type="text" name="addNew" id="addNew" v-model="AddNewValue" @input="handleInput">
+    <input placeholder="ToDo Title" type="text" name="addNew" id="addNew" v-model="title" @input="handleInput">
     <button @click="send">Add</button>
   </div>
 </template>
 
 <script>
+import EventBus from '../eventBus'
+
 export default {
   name: 'AddNew',
-  props:{
-    AddNewValue: {
-      type: String,
-      required: true
-    },
-  },
   data(){
     return{
-      AddNewValue: '',
+      title: '',
     }
   },
   methods:{
     handleInput(){
-      console.log(this.AddNewValue);
+      // console.log(this.AddNewValue);
     },
-    send(event){
-      this.$emit('send', AddNewValue)
+    send() {
+      const payload = {
+        title: this.title,
+        done: false
+      }
+      EventBus.$emit('DATA_PUBLISHED', payload);
+      this.title = "";
     }
-  }
+  },
+
 }
 </script>
 
